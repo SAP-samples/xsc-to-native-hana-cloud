@@ -54,6 +54,7 @@ SAP HANA Interactive Education or SHINE is a demo application that is packaged a
   - Analytical Privilege
 
 HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to migrate this Delivery Unit from XS Classic to SAP HANA Native with SAP HANA Cloud as the database using the SAP HANA Application Migration Assistant.
+The SAP HANA Application Migration Assistant performs only database artifact migration. It does not perform any service layer migration and does not use AI to perform any part of the migration process. All transformations are rule-based and deterministic.
 
 <p align="center">
 <img src="images\SAPHAMASD.png">
@@ -412,7 +413,7 @@ Once the project is created, there are some adjustments we need to make manually
 
 3. For the Database Connection of the project, click "Bind" and then select "Bind to an HDI Container" and finally select the HDI container created in your SAP BTP Space. Once successfully bound, you will see a .env file with the VCAP services created in the db folder of your project.
    
-4. Inside .env, extract the current schema value from VCAP services - this is your schema name. Replace < Schema Name > with this value in the `Admin.hdbroleconfig` and `Admin.hdbrole` files.
+4. Replace < Schema Name > with this value in the `Admin.hdbroleconfig` and `Admin.hdbrole` files.
 
 5. Click the "Open HDI Container" button to open the database explorer.
    
@@ -447,7 +448,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
    
 1. Following Artifacts are not currently supported '.hdbreptask'.
 
-2. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the .hdbdd files have ```Entit``` instead of ```Entity``` the artifact will not be activated and the migrated project will not contain that artifact.
+2. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NULL```, the migration will fail with errors. Please check the output logs for the error messages.
 
 ## Learning Resources
 1. [Prepare XS Classic Artifacts for Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/a759b4815ae246649c83365cbcede79b.html).

@@ -1,0 +1,7 @@
+import = [{
+	hdbtable = "sap.hana.uis.db::NAVIGATION_TARGET";
+	file = "sap.hana.democontent.epm.ui.uis.FioriLaunchPad:FioriShineCatalog_nav.csv";
+	header = true;
+	delimField = ";";
+	keys = ["AREA" : "admin/consoleapp"];
+}];

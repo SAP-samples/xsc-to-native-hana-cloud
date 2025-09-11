@@ -1,0 +1,453 @@
+[
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/BUYER.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/BUYER.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/CUSTOMER_DISCOUNT_BY_RANKING_AND_REGION.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/CUSTOMER_DISCOUNT_BY_RANKING_AND_REGION.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PO_BASIC.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PO_BASIC.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PO_HEADER.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PO_HEADER.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PO_ITEM.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PO_ITEM.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PO_WORKLIST.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PO_WORKLIST.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PROD.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PROD.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PRODUCT.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PRODUCT.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PRODUCT_SALE_PRICE.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PRODUCT_SALE_PRICE.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PURCHASE_COMMON_CURRENCY.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PURCHASE_COMMON_CURRENCY.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PURCHASE_ORDER_WORKLIST.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PURCHASE_ORDER_WORKLIST.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/PURCHASE_OVERVIEW.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/PURCHASE_OVERVIEW.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALESORDER_BASKET_ANALYSIS.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALESORDER_BASKET_ANALYSIS.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALESORDER_DYNAMIC_JOIN.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALESORDER_DYNAMIC_JOIN.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALESORDER_RANKING.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALESORDER_RANKING.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALESORDER_RANKING_SQL.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALESORDER_RANKING_SQL.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_DETAILS.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_DETAILS.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_DYNAMIC_TIME_PERIOD.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_DYNAMIC_TIME_PERIOD.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_HEADER_W_BUYER.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_HEADER_W_BUYER.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_LITE.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_LITE.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_RANKING.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_RANKING.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_RANKING_AND_DISCOUNT_SQL.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_RANKING_AND_DISCOUNT_SQL.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_ORDER_WORKLIST.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_ORDER_WORKLIST.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_OVERVIEW_WO_CURR_CONV.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_OVERVIEW_WO_CURR_CONV.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_OVERVIEW_WO_CURR_CONV_OPT.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_OVERVIEW_WO_CURR_CONV_OPT.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SALES_YEAR_COMPARISON.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SALES_YEAR_COMPARISON.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/SUPPLIER.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/SUPPLIER.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/models/TIME_DIM.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/TIME_DIM.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/spatial/models/BP_ADDRESS_DETAILS.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/spatial/models/BP_ADDRESS_DETAILS.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/spatial/models/PRODUCT_SALES.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/spatial/models/PRODUCT_SALES.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/spatial/models/REGION_PRODUCT.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/spatial/models/REGION_PRODUCT.calculationview"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/spatial/models/REGION_SALES_BP.calculationview"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/spatial/models/REGION_SALES_BP.calculationview"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_1.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_2.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_3.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_PROD_CAT.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_PROD_CAT_1.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_PROD_CAT_1_1054430.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_PURCHASE_ORDER_PROD_CAT_2.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_1.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_10.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_11.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_12.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_13.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_14.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_15.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_16.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_2.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_3.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_4.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_5.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_6.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_7.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_8.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "messages": [
+      {
+        "type": "warning",
+        "message": "Migration skipped: Cannot migrate a SQL Analytic Privilege"
+      }
+    ],
+    "sourceFile": "sap/hana/democontent/epm/models/AP_SALES_ORDER_9.analyticprivilege",
+    "status": "skipped"
+  },
+  {
+    "targetFiles": [
+      "sap/hana/democontent/epm/spatial/models/SPATIAL.analyticprivilege",
+      "sap/hana/democontent/epm/spatial/models/SPATIAL_3.analyticprivilege",
+      "sap/hana/democontent/epm/spatial/models/SPATIAL_1.analyticprivilege",
+      "sap/hana/democontent/epm/spatial/models/SPATIAL_2.analyticprivilege"
+    ],
+    "sourceFile": "sap/hana/democontent/epm/spatial/models/SPATIAL.analyticprivilege"
+  }
+]

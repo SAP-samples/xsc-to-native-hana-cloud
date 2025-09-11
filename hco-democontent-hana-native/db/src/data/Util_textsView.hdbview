@@ -1,0 +1,4 @@
+ VIEW "sap.hana.democontent.epm.data::Util.textsView" ( "TEXTID", "LANGUAGE", "ISOLANGUAGE", "TEXT" ) AS SELECT "B_$0"."TEXTID" ,
+ "B_$0"."LANGUAGE" ,
+ "B_$0"."ISOLANGUAGE" ,
+ "B_$0"."TEXT" FROM "sap.hana.democontent.epm.data::Util.Texts" AS "B_$0" ORDER BY "B_$0"."TEXTID"

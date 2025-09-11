@@ -1,0 +1,10 @@
+ VIEW "sap.hana.democontent.epm.data::PO.ItemView" ( "PurchaseOrderItemId", "ItemPos", "ProductID", "CurrencyCode", "Amount", "NetAmount", "TaxAmount", "Quantity", "QuantityUnit", "DeliveryDate1" ) AS SELECT "Item_$0"."PURCHASEORDERID" AS "PurchaseOrderItemId" ,
+ "Item_$0"."PURCHASEORDERITEM" AS "ItemPos" ,
+ "Products_$1"."PRODUCTID" AS "ProductID" ,
+ "Item_$0"."CURRENCY" AS "CurrencyCode" ,
+ "Item_$0"."GROSSAMOUNT" AS "Amount" ,
+ "Item_$0"."NETAMOUNT" AS "NetAmount" ,
+ "Item_$0"."TAXAMOUNT" AS "TaxAmount" ,
+ "Item_$0"."QUANTITY" AS "Quantity" ,
+ "Item_$0"."QUANTITYUNIT" AS "QuantityUnit" ,
+ "Item_$0"."DELIVERYDATE" AS "DeliveryDate1" FROM  ( "sap.hana.democontent.epm.data::PO.Item" AS "Item_$0" LEFT OUTER JOIN "sap.hana.democontent.epm.data::MD.Products" AS "Products_$1" ON  ( "Item_$0"."PRODUCT.PRODUCTID" = "Products_$1"."PRODUCTID" )  ) WITH READ ONLY

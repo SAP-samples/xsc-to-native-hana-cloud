@@ -1,0 +1,24 @@
+role sap.hana.democontent.epm.roles::User extends role sap.hana.uis.db::SITE_USER, sap.hana.uis.db::SITE_DESIGNER, sap.hana.xs.admin.roles::HTTPDestViewer, sap.hana.xs.admin.roles::JobViewer, sap.hana.xs.ide.roles::Developer, sap.hana.xs.admin.roles::RuntimeConfAdministrator
+{
+schema sap.hana.democontent.epm.data:SAP_HANA_DEMO.hdbschema: CREATE ANY, EXECUTE, SELECT, INSERT, UPDATE, DELETE, DEBUG;
+catalog schema "_SYS_BI": SELECT;
+catalog sql object "_SYS_BI"."M_TIME_DIMENSION" : SELECT,INSERT,UPDATE;
+catalog schema "_SYS_BIC": SELECT, EXECUTE;
+catalog schema "_SYS_RT": SELECT;
+catalog schema "_SYS_REPO": SELECT, EXECUTE;
+catalog sql object "SAP_HANA_DEMO"."sap.hana.democontent.epm.data::SO.Item": //Objecttype: TABLE
+	REFERENCES;
+
+analytic privilege : sap.hana.democontent.epm.models:AP_PURCHASE_ORDER_PROD_CAT.analyticprivilege;
+analytic privilege : sap.hana.democontent.epm.models:AP_PURCHASE_ORDER.analyticprivilege;
+analytic privilege : sap.hana.democontent.epm.models:AP_SALES_ORDER.analyticprivilege;
+catalog analytic privilege : "_SYS_BI_CP_ALL";
+
+package sap.hana.democontent.epm: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES, REPO.EDIT_IMPORTED_OBJECTS, REPO.ACTIVATE_IMPORTED_OBJECTS;
+
+application privilege: "sap.hana.democontent.epm::Basic";
+application privilege: "sap.hana.democontent.epm.ui.uis.FioriLaunchPad::WidgetAccess:FioriShineCatalog";
+application privilege: "sap.hana.democontent.epm.ui.uis.FioriLaunchPad::AppSiteAccess:FioriShineLaunchPad";
+application privilege: "sap.hana.democontent.epm.ui.uis.FioriLaunchPad::AppSiteAccess:FioriShineLaunchPadWithTheme";
+
+}

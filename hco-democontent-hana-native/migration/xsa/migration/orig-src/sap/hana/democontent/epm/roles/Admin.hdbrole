@@ -1,0 +1,29 @@
+role sap.hana.democontent.epm.roles::Admin extends role sap.hana.democontent.epm.roles::User, sap.hana.xs.admin.roles::HTTPDestAdministrator, sap.hana.xs.admin.roles::JobSchedulerAdministrator, sap.hana.xs.admin.roles::RuntimeConfAdministrator, sap.hana.xs.admin.roles::SMTPDestAdministrator, sap.hana.xs.admin.roles::JobAdministrator, sap.hana.xs.admin.roles::SMTPDestViewer, sap.hana.xs.admin.roles::SQLCCAdministrator, sap.hana.xs.admin.roles::TrustStoreAdministrator, sap.hana.xs.debugger::Debugger, sap.hana.xs.admin.roles::SAMLAdministrator
+{
+schema sap.hana.democontent.epm.data:SAP_HANA_DEMO.hdbschema: DROP;
+catalog sql object "SYS"."REPOSITORY_REST": //Objecttype: PROCEDURE
+	EXECUTE;
+catalog sql object "SAP_HANA_DEMO"."sap.hana.democontent.epm.data::addressSeqId": //Objecttype: SEQUENCE
+	ALTER, SELECT;
+sql object sap.hana.democontent.epm.data::employeeSeqId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::partnerSeqId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::purchaseOrderSeqId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::salesOrderId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::sessionId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::textSeqId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+sql object sap.hana.democontent.epm.data::userSeqId: //Objecttype: SEQUENCE
+	ALTER, DROP, SELECT;
+
+
+package sap.hana.democontent.epm.data: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES, REPO.ACTIVATE_IMPORTED_OBJECTS, REPO.EDIT_IMPORTED_OBJECTS, REPO.MAINTAIN_IMPORTED_PACKAGES;
+package sap.hana.democontent.epm: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES, REPO.EDIT_IMPORTED_OBJECTS, REPO.ACTIVATE_IMPORTED_OBJECTS;
+
+application privilege: "sap.hana.democontent.epm::Admin";
+
+}

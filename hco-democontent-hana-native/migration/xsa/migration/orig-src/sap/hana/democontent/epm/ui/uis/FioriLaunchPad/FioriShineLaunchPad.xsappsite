@@ -1,0 +1,108 @@
+{
+    "layout": "{\"pagesOrder\":[\"Documents\",\"SHINE\"]}",
+    "description": "FioriShineLaunchPad",
+    "pages": [
+        {
+            "layout": "{\"appsOrder\":[\"92701e3d-3e3e-4a58-8f2a-a0b6349367a3-1397104666770\",\"a8bd7315-7986-4587-9b8f-c3ce63020c97-1397104675817\",\"ba0ab968-999e-4820-9e8f-52068af73883-1397104681029\",\"e175441d-24f4-4d5f-8009-0c4b3d093f73-1397104822762\"]}",
+            "layoutRef": "Documents",
+            "name": "Documents",
+            "ID": "Documents"
+        },
+        {
+            "layout": "{\"appsOrder\":[\"21b3d15c-d07d-4ea6-8077-8a58186ac872-1397104873818\",\"dc7a1a68-f6c0-4338-92b8-97388e800058-1397104871653\",\"d67ffd91-9d46-49f5-9ef1-cf33e03f4330-1397104871066\",\"22f6fef4-7e22-47cd-864f-cf78b29845e8-1397104873014\",\"67d839d3-f1c3-446a-8bd1-4605a78fb7a5-1399796322222\"]}",
+            "layoutRef": "SHINE",
+            "name": "Sap Hana INteractive Education",
+            "ID": "SHINE"
+        }
+    ],
+    "apps": [
+        {
+            "layoutRef": "92701e3d-3e3e-4a58-8f2a-a0b6349367a3-1397104666770",
+            "containerID": "Documents",
+            "appTemplateID": "0aa17234-095c-4b0c-aa6c-0c8c715b0d27-1389082499418",
+            "appTemplatePackageID": "sap.hana.uis.content.hanahome",
+            "appTemplateObjectName": "HANADocumentationCatalog",
+            "ID": "92701e3d-3e3e-4a58-8f2a-a0b6349367a3-1397104666770",
+            "type": "local"
+        },
+        {
+            "layoutRef": "a8bd7315-7986-4587-9b8f-c3ce63020c97-1397104675817",
+            "containerID": "Documents",
+            "appTemplateID": "b34ebe10-230d-4f57-af19-5b6be7a077a1-1389106111900",
+            "appTemplatePackageID": "sap.hana.uis.content.hanahome",
+            "appTemplateObjectName": "HANADocumentationCatalog",
+            "ID": "a8bd7315-7986-4587-9b8f-c3ce63020c97-1397104675817",
+            "type": "local"
+        },
+        {
+            "layoutRef": "ba0ab968-999e-4820-9e8f-52068af73883-1397104681029",
+            "containerID": "Documents",
+            "appTemplateID": "13f00a81-2497-4dcf-8437-8897aa59524b-1389081678119",
+            "appTemplatePackageID": "sap.hana.uis.content.hanahome",
+            "appTemplateObjectName": "HANADocumentationCatalog",
+            "ID": "ba0ab968-999e-4820-9e8f-52068af73883-1397104681029",
+            "type": "local"
+        },
+        {
+            "layoutRef": "e175441d-24f4-4d5f-8009-0c4b3d093f73-1397104822762",
+            "containerID": "Documents",
+            "appTemplateID": "53bd350f-3b32-4fa0-ba96-5c6085eb7294-1397104697429",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "e175441d-24f4-4d5f-8009-0c4b3d093f73-1397104822762",
+            "type": "local"
+        },
+        {
+            "layoutRef": "d67ffd91-9d46-49f5-9ef1-cf33e03f4330-1397104871066",
+            "containerID": "SHINE",
+            "appTemplateID": "9196996e-524e-46c6-87cf-f954ef45a523-1397104165731",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "d67ffd91-9d46-49f5-9ef1-cf33e03f4330-1397104871066",
+            "type": "local"
+        },
+        {
+            "layoutRef": "dc7a1a68-f6c0-4338-92b8-97388e800058-1397104871653",
+            "containerID": "SHINE",
+            "appTemplateID": "9df3053f-45b0-43c8-8410-80c3fbe0cb59-1397104075654",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "dc7a1a68-f6c0-4338-92b8-97388e800058-1397104871653",
+            "type": "local"
+        },
+        {
+            "layoutRef": "22f6fef4-7e22-47cd-864f-cf78b29845e8-1397104873014",
+            "containerID": "SHINE",
+            "appTemplateID": "a6eb262b-c3ca-47d2-9b14-5fb38eb40405-1397104247982",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "22f6fef4-7e22-47cd-864f-cf78b29845e8-1397104873014",
+            "type": "local"
+        },
+        {
+            "layoutRef": "21b3d15c-d07d-4ea6-8077-8a58186ac872-1397104873818",
+            "containerID": "SHINE",
+            "appTemplateID": "ed3e8d04-99b6-476d-8742-4c1ff912e209-1397103946155",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "21b3d15c-d07d-4ea6-8077-8a58186ac872-1397104873818",
+            "type": "local"
+        },
+        {
+            "layoutRef": "67d839d3-f1c3-446a-8bd1-4605a78fb7a5-1399796322222",
+            "containerID": "SHINE",
+            "appTemplateID": "8f244456-c022-41ef-9049-30b0dae5f839-1398955230950",
+            "appTemplatePackageID": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad",
+            "appTemplateObjectName": "FioriShineCatalog",
+            "ID": "67d839d3-f1c3-446a-8bd1-4605a78fb7a5-1399796322222",
+            "type": "local"
+        }
+    ],
+    "properties": [
+        {
+            "key": "sap.hana.uis.site.type",
+            "value": "fiori"
+        }
+    ],
+    "name": "FioriShineLaunchPad"
+}

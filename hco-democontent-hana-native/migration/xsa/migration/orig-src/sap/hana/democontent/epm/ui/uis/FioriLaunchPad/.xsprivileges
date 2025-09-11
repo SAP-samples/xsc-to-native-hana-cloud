@@ -1,0 +1,17 @@
+{
+    "privileges": [{
+        "name": "WidgetAccess:FioriShineCatalog",
+        "description": "Access FioriShineCatalog Widget"
+    }, {
+        "name": "AppSiteAccess:FioriShineLaunchPad",
+        "description": "Access FioriShineLaunchPad AppSite"
+    }, {
+        "name": "AppSiteAccess:FioriLauncPadWithImage",
+        "description": "Access FioriLauncPadWithImage AppSite"
+    },
+        {
+      "name": "AppSiteAccess:FioriShineLaunchPadWithTheme",
+      "description": "Access FioriShineLaunchPadWithTheme AppSite"
+    }
+    ]
+}

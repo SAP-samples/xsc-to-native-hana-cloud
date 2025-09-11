@@ -1,0 +1,11 @@
+{
+	"name": "test.UIComponentTest",
+	"version": "0.1.0",
+	"description": "Test new component",
+	"keywords": [
+		"someControl",
+		"test"
+	],
+	"dependencies": {
+	}
+}

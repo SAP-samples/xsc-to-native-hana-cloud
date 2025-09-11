@@ -1,0 +1,1 @@
+ TYPE "sap.hana.democontent.epm.data::Procedures.tt_product_ids" AS TABLE  ( "PRODUCTID" NVARCHAR(10)   ) 

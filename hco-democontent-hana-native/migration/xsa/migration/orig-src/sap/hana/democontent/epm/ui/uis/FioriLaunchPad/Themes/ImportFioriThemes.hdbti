@@ -1,0 +1,10 @@
+import = [
+{
+    table = "sap.hana.uis.db::THEMES";
+    schema = "UIS";
+    file = "sap.hana.democontent.epm.ui.uis.FioriLaunchPad.Themes:myTheme.csv";
+    header = false;
+     keys = [ "ID" : "10"  ];
+}
+];
+

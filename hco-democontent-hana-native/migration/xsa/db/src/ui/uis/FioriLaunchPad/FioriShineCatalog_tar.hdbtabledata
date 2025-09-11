@@ -1,0 +1,32 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "sap.hana.uis.db::INTENT_ALIAS_MAPPING_V2",
+            "import_settings": {
+                "include_filter": [
+                    {
+                        "CONTEXT": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad:FioriShineCatalog"
+                    }
+                ],
+                "import_columns": [
+                    "ID",
+                    "SEMANTIC_OBJECT",
+                    "ACTION",
+                    "AREA",
+                    "ALIAS",
+                    "CONTEXT",
+                    "INFO"
+                ]
+            },
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad::FioriShineCatalog_tar.csv",
+                "has_header": true,
+                "type_config": {
+                    "delimiter": ";"
+                }
+            }
+        }
+    ]
+}

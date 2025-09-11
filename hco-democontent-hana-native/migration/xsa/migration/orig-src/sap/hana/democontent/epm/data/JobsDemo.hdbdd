@@ -1,0 +1,19 @@
+namespace sap.hana.democontent.epm.data;
+//SP09 requirements - Multi File Support
+using sap.hana.democontent.epm.data::EPM.Source;
+@Schema: 'SAP_HANA_DEMO' 
+
+context JobsDemo {
+ 	 @Catalog.tableType: #COLUMN
+     Entity Details {
+     	key TIME: UTCTimestamp;
+     	SOURCE: Source;
+     };	
+     
+     @Catalog.tableType: #COLUMN
+     Entity RuntimeSchedules {
+     	key NAME: hana.VARCHAR(40);
+     	ID: Integer;
+     	JOBTYPE: hana.VARCHAR(40);
+     };	
+};

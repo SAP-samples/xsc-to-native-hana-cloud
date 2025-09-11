@@ -1,0 +1,6 @@
+ COLUMN TABLE "sap.hana.democontent.epm.data::JobsDemo.RuntimeSchedules"(
+"NAME" VARCHAR(40) NOT NULL ,
+ "ID" INTEGER ,
+ "JOBTYPE" VARCHAR(40),
+ PRIMARY KEY ("NAME")
+) UNLOAD PRIORITY 5  AUTO MERGE

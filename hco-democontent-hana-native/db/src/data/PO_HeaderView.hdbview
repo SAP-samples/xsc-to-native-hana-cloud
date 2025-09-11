@@ -1,0 +1,12 @@
+ VIEW "sap.hana.democontent.epm.data::PO.HeaderView" ( "PurchaseOrderId", "CreatedByEmployeeId", "CreatedByFirstName", "CreatedByLastName", "CreatedByLoginName", "CreatedAt", "PartnerId", "CompanyName", "Currency", "GrossAmount", "NetAmount", "TaxAmount" ) AS SELECT "Header_$0"."PURCHASEORDERID" AS "PurchaseOrderId" ,
+ "Employees_$1"."EMPLOYEEID" AS "CreatedByEmployeeId" ,
+ "Employees_$1"."NAME.FIRST" AS "CreatedByFirstName" ,
+ "Employees_$1"."NAME.LAST" AS "CreatedByLastName" ,
+ "Employees_$1"."LOGINNAME" AS "CreatedByLoginName" ,
+ "Header_$0"."HISTORY.CREATEDAT" AS "CreatedAt" ,
+ "BusinessPartner_$2"."PARTNERID" AS "PartnerId" ,
+ "BusinessPartner_$2"."COMPANYNAME" AS "CompanyName" ,
+ "Header_$0"."CURRENCY" AS "Currency" ,
+ "Header_$0"."GROSSAMOUNT" AS "GrossAmount" ,
+ "Header_$0"."NETAMOUNT" AS "NetAmount" ,
+ "Header_$0"."TAXAMOUNT" AS "TaxAmount" FROM  (  ( "sap.hana.democontent.epm.data::PO.Header" AS "Header_$0" LEFT OUTER JOIN "sap.hana.democontent.epm.data::MD.Employees" AS "Employees_$1" ON  ( "Header_$0"."HISTORY.CREATEDBY.EMPLOYEEID" = "Employees_$1"."EMPLOYEEID" )  )  LEFT OUTER JOIN "sap.hana.democontent.epm.data::MD.BusinessPartner" AS "BusinessPartner_$2" ON  ( "Header_$0"."PARTNER.PARTNERID" = "BusinessPartner_$2"."PARTNERID" )  ) WITH READ ONLY

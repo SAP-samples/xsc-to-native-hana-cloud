@@ -1,0 +1,36 @@
+import = [
+            {
+                cdstable = "sap.hana.democontent.epm.data::Util.Constants";
+                file = "sap.hana.democontent.epm.data.loads:constants.csv";
+                header = true;
+                useHeaderNames = true;
+            },
+            {
+                cdstable = "sap.hana.democontent.epm.data::Util.Texts";
+                file = "sap.hana.democontent.epm.data.loads:texts.csv";
+                header = true;
+                useHeaderNames = true;
+            },
+            {
+                cdstable = "sap.hana.democontent.epm.data::Util.Notes";
+                file = "sap.hana.democontent.epm.data.loads:notes.csv";  
+                
+				//Use the header keyword in the table-import configuration to indicate if the data contained in the specified .csv file includes a header line                
+				//The header keyword is optional, and the possible values are true or false.                
+                
+                header = true;
+
+				//Use the useHeaderNames keyword in the table-import configuration to indicate if the data contained in the first line of the specified .csv file 
+				//must be interpreted. The useHeaderNames keyword is optional; it is used in combination with theheader keyword. The useHeaderNames 
+				//keyword is boolean: possible values are true or false.
+				//The useHeaderNames keyword only works if header is also set to "true".
+
+                useHeaderNames = true;
+            },       
+            {
+                cdstable = "sap.hana.democontent.epm.data::Util.Attachments";
+                file = "sap.hana.democontent.epm.data.loads:attachments.csv";  
+                header = true;
+                useHeaderNames = true; 
+            }      
+       ];

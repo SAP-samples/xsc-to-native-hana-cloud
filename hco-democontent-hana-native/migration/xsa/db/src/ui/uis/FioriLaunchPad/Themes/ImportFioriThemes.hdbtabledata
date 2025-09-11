@@ -1,0 +1,30 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "sap.hana.uis.db::THEMES",
+            "import_settings": {
+                "include_filter": [
+                    {
+                        "ID": "10"
+                    }
+                ],
+                "import_columns": [
+                    "ID",
+                    "NAME",
+                    "ROOT_PATH"
+                ]
+            },
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "sap.hana.democontent.epm.ui.uis.FioriLaunchPad.Themes::myTheme.csv",
+                "has_header": false
+            },
+            "column_mappings": {
+                "ID": 1,
+                "NAME": 2,
+                "ROOT_PATH": 3
+            }
+        }
+    ]
+}

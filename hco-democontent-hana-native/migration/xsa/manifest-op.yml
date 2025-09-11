@@ -1,0 +1,32 @@
+---
+  applications:
+  - name: HCO_DEMOCONTENT-app
+    path: web
+    memory: 128M
+    services:
+      - uaa
+    env:
+      destinations: >
+        [
+            {"name":"ui5", "url":"https://sapui5.netweaver.ondemand.com"},
+            {"name":"xsjs", "url": "[http/https]://[server URL]:[xsjs-service-port]", "forwardAuthToken": true}
+        ]
+
+  - name: HCO_DEMOCONTENT-db
+    path: db
+    memory: 256M
+    no-route: true
+    services:
+      - HCO_DEMOCONTENT-hdi
+      - synonym-grantor-service
+    env:
+      TARGET_CONTAINER: HCO_DEMOCONTENT-hdi
+
+  - name: HCO_DEMOCONTENT-xsjs-service
+    port: [xsjs-service-port]
+    path: async_xsjs
+    memory: 128M
+    services:
+      - uaa
+      - HCO_DEMOCONTENT-hdi
+

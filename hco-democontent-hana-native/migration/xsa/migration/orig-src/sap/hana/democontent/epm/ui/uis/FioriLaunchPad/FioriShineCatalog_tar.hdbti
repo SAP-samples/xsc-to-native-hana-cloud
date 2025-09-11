@@ -1,0 +1,7 @@
+import = [{
+	hdbtable = "sap.hana.uis.db::INTENT_ALIAS_MAPPING_V2";
+	file = "sap.hana.democontent.epm.ui.uis.FioriLaunchPad:FioriShineCatalog_tar.csv";
+	header = true;
+	delimField = ";";
+	keys = ["CONTEXT" : "sap.hana.democontent.epm.ui.uis.FioriLaunchPad:FioriShineCatalog"];
+}];

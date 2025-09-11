@@ -1,0 +1,2 @@
+URI;TYPE;DESCRIPTION;AREA;ALIAS;TITLE;VIEW_NAME;APPLICATION_PARAMETERS
+/sap/ui5/1/test-resources/sap/ushell/demoapps/AppNavSample2;URL;;admin/consoleapp;rolesEditor;Roles Navigation Target;SAPUI5.Component=sap.ushell.demo.AppNavSample2;
