@@ -54,6 +54,7 @@ SAP HANA Interactive Education or SHINE is a demo application that is packaged a
   - Analytical Privilege
 
 HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to migrate this Delivery Unit from XS Classic to SAP HANA Native with SAP HANA Cloud as the database using the SAP HANA Application Migration Assistant.
+The SAP HANA Application Migration Assistant performs only database artifact migration. It does not perform any service layer migration and does not use AI to perform any part of the migration process. All transformations are rule-based and deterministic.
 
 <p align="center">
 <img src="images\SAPHAMASD.png">
@@ -260,6 +261,7 @@ At the end of the migration, a SAP HANA Native project will be generated, contai
 </p>
 
 ## Step-5: Database post migration changes
+
 Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration Assistant. We have provided the changed files for [HCO_DEMOCONTENT](https://github.com/SAP-samples/xsc-hana-native-migration/tree/main/hana-shine-native-final) for reference.
  1. If your project contains any files from a different schema, these need to be migrated before migrating the current Delivery Unit and included in this project. If this can't be done immediately, you can remove them for the time being. To utilize objects from other containers, please refer to the SAP HANA Cloud help documentation and configure accordingly.
     
@@ -269,7 +271,7 @@ Once the project is created, there are some adjustments we need to make manually
     - Delete the uis and ui folder in db/src
     - Delete `synonym-grantor-service.hdbsynonym` from db/src/models
  2. In order to access objects from other public schemas, you will need to either create a new hdbsynonym file or modify an existing one.
-    For the HCO_DEMOCONTENT project, edit the `db/src/synonym-grantor-service.hdbsynonym` file with the following configuration:
+    For the HCO_DEMOCONTENT project, edit the `db/src/synonym-grantor-service.hdbsynonym` file with the following configuration or create user provided services to connect the target object
     ```
     {
       "sap.hana.democontent.epm::DUMMY": {
@@ -450,6 +452,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 2. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NULL```, the migration will fail with errors. Please check the output logs for the error messages.
 
 ## Learning Resources
+
 1. [Prepare XS Classic Artifacts for Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/a759b4815ae246649c83365cbcede79b.html).
 2. [Prepare the Source System for the XS Application Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/2786447387df41f69a0dad1cc2973e95.html).
 3. [The Self-Service Migration Tool for SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/self-service-migration-for-sap-hana-cloud-tool).
@@ -457,6 +460,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 
 
 ## How to obtain support
+
 [Create an issue](https://github.com/SAP-samples/xsc-to-native-hana-cloud/issues) in this repository if you find a bug or have questions about the content.
  
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).

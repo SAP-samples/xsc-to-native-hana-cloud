@@ -1,0 +1,4 @@
+ TYPE "sap.hana.democontent.epm.data::MD.NameT" AS TABLE  ( "FIRST" VARCHAR(40) ,
+ "MIDDLE" VARCHAR(40) ,
+ "LAST" VARCHAR(40) ,
+ "INITIALS" NVARCHAR(10)   ) 

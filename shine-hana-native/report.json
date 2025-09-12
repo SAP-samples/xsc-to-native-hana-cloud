@@ -1,0 +1,275 @@
+{
+  "hdbcds": {
+    "OBJECTS": [
+      {
+        "source_fileName": "src/data/Conversions.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.T006",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.T006A",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURC",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURF",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURN",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURR",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURT",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURV",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURW",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Conversions.TCURX",
+            "type": "TABLE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/EPM.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::EPM.MapKeys",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::EPM.ValidityT",
+            "type": "TABLETYPE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/JobsDemo.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::JobsDemo.Details",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::JobsDemo.RuntimeSchedules",
+            "type": "TABLE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/MD.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::MD.Addresses",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.BusinessPartner",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.Employees",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.Products",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.productLog",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.BuyerView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.SupplierView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.ProductView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.texts",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.productTexts",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.HistT",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::MD.NameT",
+            "type": "TABLETYPE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/PO.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::PO.Header",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::PO.Item",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::PO.HeaderView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::PO.ItemView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::PO.POWorklistView",
+            "type": "VIEW"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/Procedures.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_bp_addresses",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_bp_addresses_ext",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_product_sale_price",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_product_ids",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_product_detail",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_customer_discount_calculation",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_tax_calculation",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_variable",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_errors",
+            "type": "TABLETYPE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Procedures.tt_scookie",
+            "type": "TABLETYPE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/SO.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::SO.Header",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::SO.Item",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::SO.Filter",
+            "type": "TABLE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/User.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::User.Details",
+            "type": "TABLE"
+          }
+        ]
+      },
+      {
+        "source_fileName": "src/data/Util.hdbdd",
+        "generated_objects": [
+          {
+            "name": "sap.hana.democontent.epm.data::Util.Constants",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.Texts",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.Messages",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.SSCOOKIE",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.Notes",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.Attachments",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.DataGenerationTime.hdbdropcreatetable",
+            "type": "TEMPORARY TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.SeriesData",
+            "type": "TABLE"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.AttachementsView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.NotesView",
+            "type": "VIEW"
+          },
+          {
+            "name": "sap.hana.democontent.epm.data::Util.textsView",
+            "type": "VIEW"
+          }
+        ]
+      }
+    ]
+  }
+}

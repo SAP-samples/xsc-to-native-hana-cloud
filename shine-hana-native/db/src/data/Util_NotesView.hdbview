@@ -1,0 +1,6 @@
+ VIEW "sap.hana.democontent.epm.data::Util.NotesView" ( "NOTEID", "Author", "Text", "CREATEDAT", "Thumbnail", "LINKID" ) AS SELECT "Notes_$0"."NOTEID" ,
+ "Notes_$0"."AUTHOR" AS "Author" ,
+ "Notes_$0"."TEXT" AS "Text" ,
+ "Notes_$0"."CREATEDAT" ,
+ "Notes_$0"."THUMBNAIL" AS "Thumbnail" ,
+ "Notes_$0"."LINKID" FROM "sap.hana.democontent.epm.data::Util.Notes" AS "Notes_$0"

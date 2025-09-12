@@ -1,0 +1,5 @@
+ COLUMN TABLE "sap.hana.democontent.epm.data::JobsDemo.Details"(
+"TIME" LONGDATE  NOT NULL ,
+ "SOURCE" NVARCHAR(30),
+ PRIMARY KEY ("TIME")
+) UNLOAD PRIORITY 5  AUTO MERGE

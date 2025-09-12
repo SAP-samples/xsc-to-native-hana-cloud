@@ -1,0 +1,5 @@
+ COLUMN TABLE "sap.hana.democontent.epm.data::Util.SeriesData"(
+"setid" INTEGER  NOT NULL ,
+ "t" LONGDATE  NOT NULL ,
+ "FACTOR" DECIMAL(9,6) ,
+ PRIMARY KEY ("setid", "t")) UNLOAD PRIORITY 5  AUTO MERGE  

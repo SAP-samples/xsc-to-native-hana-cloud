@@ -1,0 +1,10 @@
+ VIEW "sap.hana.democontent.epm.data::MD.BuyerView" ( "Id", "EmailAddress", "CompanyName", "City", "PostalCode", "Street", "Building", "Country", "Region", "CreatedBy" ) AS SELECT "BusinessPartner_$0"."PARTNERID" AS "Id" ,
+ "BusinessPartner_$0"."EMAILADDRESS" AS "EmailAddress" ,
+ "BusinessPartner_$0"."COMPANYNAME" AS "CompanyName" ,
+ "Addresses_$1"."CITY" AS "City" ,
+ "Addresses_$1"."POSTALCODE" AS "PostalCode" ,
+ "Addresses_$1"."STREET" AS "Street" ,
+ "Addresses_$1"."BUILDING" AS "Building" ,
+ "Addresses_$1"."COUNTRY" AS "Country" ,
+ "Addresses_$1"."REGION" AS "Region" ,
+ "Employees_$2"."LOGINNAME" AS "CreatedBy" FROM  (  ( "sap.hana.democontent.epm.data::MD.BusinessPartner" AS "BusinessPartner_$0" LEFT OUTER JOIN "sap.hana.democontent.epm.data::MD.Addresses" AS "Addresses_$1" ON  ( "BusinessPartner_$0"."ADDRESSES.ADDRESSID" = "Addresses_$1"."ADDRESSID" )  )  LEFT OUTER JOIN "sap.hana.democontent.epm.data::MD.Employees" AS "Employees_$2" ON  ( "BusinessPartner_$0"."HISTORY.CREATEDBY.EMPLOYEEID" = "Employees_$2"."EMPLOYEEID" )  )  WHERE  ( "BusinessPartner_$0"."PARTNERROLE" = '01' ) WITH READ ONLY

@@ -1,0 +1,3 @@
+ TYPE "sap.hana.democontent.epm.data::Procedures.tt_customer_discount_calculation" AS TABLE  ( "COMPANY_NAME" NVARCHAR(50)  ,
+ "REGION" NVARCHAR(50)  ,
+ "SALES" DECIMAL(15,2) , "ORDERS" INT , "SALES_RANK" INT , "ORDER_RANK" INT  ) 

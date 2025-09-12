@@ -1,0 +1,837 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        tbody tr:nth-child(odd) {
+            background-color: #f9fbfd;
+        }
+        
+        tbody tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            color: #1a1a1a;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .tab {
+            display: flex;
+            border-bottom: 2px solid #d0d7de;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+            border-radius: 8px 8px 0 0;
+            padding-left: 10px;
+        }
+
+        .tab button {
+            background-color: transparent;
+            color: #007bff;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin-right: 5px;
+            border: 1px solid #c0d3e2;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+        }
+
+        .tab button.active {
+            background-color: #cce5ff;
+            color: #003e80;
+        }
+
+        .tab button:hover {
+            background-color: #dceeff;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #d0d7de;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .tabcontent.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        p {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 15px;
+            font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table, th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #d0d7de;
+        }
+
+        th {
+            background-color: #f0f4ff;
+            font-weight: bold;
+            color: #1a237e;
+        }
+        td {
+            color: #333;
+        }
+
+        .info-box {
+            border: 1px solid #ccc;
+            background-color: #fdfdfd;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: #fff;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 15px;
+        }
+
+        .summary-box {
+            background-color: #f5f9ff;
+            padding: 15px 20px;
+            border: 1px solid #c9e2f6;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .summary-box p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .summary-box b {
+            display: inline-block;
+            width: 120px;
+            color: #333;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .warning {
+            color: orange;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .info {
+            color: green;
+        }
+        </style></head><body><div class="header"><img src="customer_report/sap.gif" alt="Company Logo"><h1>HCO_DEMOCONTENT (sap.com) Migration Report</h1></div><div class="tab"><button class="tablinks" data-tab="tab1">About</button><button class="tablinks" data-tab="tab2">Migration Status</button><button class="tablinks" data-tab="tab3">Migration Results</button><button class="tablinks" data-tab="tab4">Post Migration Steps</button></div><div id="tab1" class="tabcontent">
+      <h2>Project Information</h2>
+      <div class="summary-box">
+        <p><b>Project:</b> HCO_DEMOCONTENT (sap.com)</p>
+        <p><b>System:</b> localhost</p>
+        <p><b>Content:</b> 1 DU, HCO_DEMOCONTENT (sap.com) - 1.205.0, including 189 packages</p>
+        <p><b>Extension Version:</b> 50.0.0</p>
+      </div>
+    </div><div id="tab2" class="tabcontent">
+        <h2 style="margin-top: 24px; color: #1a237e;">Migration Status</h2>
+        <div style="color: #212121; font-size: 16px; padding-left: 20px; line-height: 1.8;">
+          
+          <p style="background-color: #f0f4ff; padding: 10px; border-left: 5px solid #1a73e8;">
+            The migration of <strong>XSC</strong> design time artifacts to 
+            <strong>SAP HANA Native</strong> on <strong>SAP HANA Cloud</strong> is complete. 
+            Below are the detailed changes performed during the migration:
+          </p>
+      
+          <h3 style="color: #0d47a1;"> Key Migration Changes</h3>
+      
+          <p><strong>Project Configuration Features:</strong></p>
+          <ul style="list-style-type: disc; padding-left: 50px;">
+            <li>Generated SAP HANA Native project structure</li>
+            <li>Migrated database artifacts to SAP HANA Native formats i.e hdbdd-&gt; hdbtables, hdbviews, hdbindexes and hdbtabletypes</li>
+            <li>Converted design time artifacts to HDI-compatible formats</li>
+            <li>Generated MTA deployment descriptor</li>
+          </ul>
+      
+          <h4 style="color: #0d47a1;"> Data Type Conversion in Native Artifacts</h4>
+          <ul>
+            <li>ALPHANUM → NVARCHAR</li>
+            <li>TEXT → NCLOB</li>
+            <li>SHORTTEXT → NVARCHAR</li>
+            <li>CHAR → VARCHAR</li>
+            <li>BINTEXT → NCLOB</li>
+          </ul>
+
+           <h4 style="color: #0d47a1;"> File extension changes from XS Classic</h4>
+          <ul>
+            <li>.hdbdd-&gt; .hdbtable, .hdbview, .hdbindex, .hdbtabletype, .hdbdropcreatetable</li>
+            <li>.calculationview, .analyticview, .attributeview -&gt; .hdbcalculationview</li>
+            <li>.hdbfunction, .hdbscalarfunction, .hdbtablefunction -&gt; .hdbfunction</li>
+            <li>.analyticprivilege -&gt; .hdbanalyticprivilege </li>
+          </ul>
+
+          <h4 style="color: #0d47a1;"> Calculation Views with Parameters</h4>
+          <ul>
+            <li>Parameters without defined types default to <strong>String</strong>.</li>
+          </ul>
+
+          <h4 style="color: #0d47a1;"> Series Entity</h4>
+          <ul>
+            <li>Series entity is not supported and is converted to a regular entity.</li>
+          </ul>
+      
+          <h4 style="color: #0d47a1;"> Data Type Conversion in Calculation Views</h4>
+          <ul>
+            <li>date() → daydate()</li>
+            <li>day() → daydate()</li>
+            <li>time() → daytime()</li>
+            <li>counter (Integer) → BIGINT</li>
+          </ul>
+
+          <h4 style="color: #0d47a1;"> Synonym grantor service</h4>
+          <ul>
+            <li>Synonym grantor service will be added in mta descriptor if present in source project</li>
+          </ul>
+          
+          <h4 style="color: #0d47a1;"> Fuzzy Search Indexes</h4>
+          <ul>
+            <li>Enabled fuzzy search → Generates files under <strong>hdbindexes</strong> folder.</li>
+            <li>
+              <strong>Implicit:</strong> Indexes from datatypes like <strong>SHORTTEXT</strong> and <strong>TEXT</strong> in SAP HANA 2.0 now require explicit handling in SAP HANA Cloud.
+            </li>
+            <li>
+              <strong>Explicit:</strong> If defined in config, explicit fuzzy index files are created.
+            </li>
+          </ul>
+      
+      
+        </div>
+      </div><div id="tab3" class="tabcontent"><div><h2>Migration Results</h2><div class="section">
+        <h3>Datatype Conversion applied on the following files: </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>/home/user/projects/hco-democontent-hana-native_HN/db/src/models/SALES_ORDER_DYNAMIC_TIME_PERIOD.hdbcalculationview</td></tr>
+            </tbody>
+        </table>
+        <br>
+    <h3>src/data/Conversions.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.T006</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.T006A</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURC</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURF</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURN</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURR</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURT</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURV</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURW</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Conversions.TCURX</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/EPM.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::EPM.MapKeys</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::EPM.ValidityT</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/JobsDemo.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::JobsDemo.Details</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::JobsDemo.RuntimeSchedules</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/MD.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.Addresses</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.BusinessPartner</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.Employees</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.Products</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.productLog</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.BuyerView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.SupplierView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.ProductView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.texts</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.productTexts</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.HistT</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::MD.NameT</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/PO.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::PO.Header</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::PO.Item</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::PO.HeaderView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::PO.ItemView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::PO.POWorklistView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/Procedures.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_bp_addresses</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_bp_addresses_ext</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_product_sale_price</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_product_ids</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_product_detail</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_customer_discount_calculation</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_tax_calculation</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_variable</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_errors</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Procedures.tt_scookie</td>
+                    <td>TABLETYPE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/SO.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::SO.Header</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::SO.Item</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::SO.Filter</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/User.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::User.Details</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        <h3>src/data/Util.hdbdd</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generated Object Name</th>
+                        <th>Object Type</th>
+                        <th>Migration Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.Constants</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.Texts</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.Messages</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.SSCOOKIE</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.Notes</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.Attachments</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.DataGenerationTime.hdbdropcreatetable</td>
+                    <td>TEMPORARY TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.SeriesData</td>
+                    <td>TABLE</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.AttachementsView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.NotesView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                <tr>
+                    <td>sap.hana.democontent.epm.data::Util.textsView</td>
+                    <td>VIEW</td>
+                    <td style="text-align:center; color:green;">✔</td>
+                </tr>
+            
+                </tbody>
+            </table>
+            <br>
+        </div></div></div><div id="tab4" class="tabcontent">
+<h2 style="margin-top: 24px; color: #1a237e;"> Post Migration Steps</h2>
+<p style="font-size: 16px; color: #333; background-color: #f0f4ff; padding: 10px; border-left: 5px solid #1a73e8;">
+   Migration of DB Artifacts from <strong>XSC</strong> to <strong>SAP HANA Native</strong> is complete. However, please review the following steps carefully before deployment:
+</p>
+
+<ul style="color: #212121; font-size: 15px; padding-left: 24px; list-style-type: disc; line-height: 1.8;">
+
+  <li>
+    <strong style="color: #0d47a1;">SQL Syntax Changes in Procedures:</strong>
+    <ul style="list-style-type: circle; padding-left: 18px;">
+      <li><strong>UPDATE FROM</strong> → <strong>MERGE INTO</strong></li>
+      <li><strong>TRUNCATE</strong> → <strong>DELETE FROM</strong></li>
+    </ul>
+  </li>
+
+     <li>
+      <strong style="color: #0d47a1;">CSV/hdbtabledata files</strong>
+      <ul style="list-style-type: circle; padding-left: 18px;">
+        <li>In the hdbtabledata files, remove namespace before csv files defined inside.</li>
+      </ul>
+    </li>
+
+  <li>
+    <strong style="color: #0d47a1;">Unsupported Functions in Calculation Views:</strong>
+    <ul style="list-style-type: circle; padding-left: 18px;">
+      <li><strong>CE_FUNCTION</strong>, <strong>CACHE</strong>, etc. are not supported.</li>
+      <li>
+        Refer to 
+        <a href="https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/design-time-content-compatibility?locale=en-US" target="_blank" rel="noopener noreferrer" style="color: #1565c0;">
+           SAP HANA Cloud Documentation
+        </a>
+
+        for supported alternatives.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong style="color: #0d47a1;">HdbSynonym, HdbSynonymconfig, and Hdbrole Files:</strong>
+    <ul style="list-style-type: circle; padding-left: 18px;">
+      <li>Verify target object parameters and names for accuracy before deployment.</li>
+    </ul>
+  </li>
+
+
+
+</ul>
+</div><div id="tab5" class="tabcontent">
+                <h2>Post Migration Steps - Service Layer</h2>
+                <p style="font-size: 16px; color: #333; background-color: #f0f4ff; padding: 10px; border-left: 5px solid #1a73e8;"></p>
+                <h3>service.cds</h3>
+                <ul>
+                    <li><strong>Entity Imports:</strong> Confirm that all entities from DB are correctly imported.</li>
+                    <li><strong>Service Name:</strong> Each service.cds file uses the xsodata filename as the service name.</li>
+                    <li><strong>Duplicate Exposed Entities:</strong> If multiple services expose the same entity, review and remove duplicates unless explicitly needed.</li>
+                </ul>
+
+                <h3>service.js</h3>
+                <ul>
+                    <li>Review for correct binding between entity operations and handler functions.</li>
+                </ul>
+
+                <h3>handlers</h3>
+                <ul>
+                    <li>Confirm that all converted xsjs/xsjslib files are present.</li>
+                    <li>Each file must export a function that binds to its relevant service events.</li>
+                    <li>Verify functionality against original xsjs and xsjslib logic.</li>
+                </ul>
+        </div><script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].classList.remove("active");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.classList.add("active");
+            }
+
+            // Add event listeners to tab buttons
+            document.querySelectorAll('.tablinks').forEach(button => {
+                button.addEventListener('click', function() {
+                    openTab(event, this.getAttribute('data-tab'));
+                });
+            });
+
+            // Open the first tab by default
+            document.querySelector('.tablinks').click();
+        </script></body></html>
