@@ -1,5 +1,5 @@
 _schema-version: '2.1'
-ID: hco-democontent-hana-native
+ID: shine-hana-native
 version: 0.0.1
 modules:
   - name: db
