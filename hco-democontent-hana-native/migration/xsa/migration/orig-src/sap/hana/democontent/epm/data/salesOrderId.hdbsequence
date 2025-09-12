@@ -1,8 +1,0 @@
-schema= "SAP_HANA_DEMO";
-start_with= 0500001029;
-maxvalue= 0599999999;
-nomaxvalue=false;
-minvalue= 1;
-nominvalue=true;
-cycles= false;
-depends_on_table= "sap.hana.democontent.epm.data::EPM.SO.Header"; 

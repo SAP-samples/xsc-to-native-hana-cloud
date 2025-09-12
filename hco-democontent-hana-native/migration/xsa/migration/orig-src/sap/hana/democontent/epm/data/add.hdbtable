@@ -1,7 +1,0 @@
-table.schemaName = "LM";
-table.tableType = COLUMNSTORE;
-table.columns = [
-	{name = "Col1"; sqlType = VARCHAR; nullable = false; length = 20; comment = "dummy comment";},
-	{name = "Col2"; sqlType = INTEGER; nullable = false;},
-	{name = "Col3"; sqlType = NVARCHAR; nullable = true; length = 20; defaultValue = "Defaultvalue";}];
-table.primaryKey.pkcolumns = ["Col1"];

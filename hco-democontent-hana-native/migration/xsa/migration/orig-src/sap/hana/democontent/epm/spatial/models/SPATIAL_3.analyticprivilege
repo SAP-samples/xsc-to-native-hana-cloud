@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="SPATIAL_3" privilegeType="SQL_ANALYTIC_PRIVILEGE">
-  <descriptions defaultDescription="SPATIAL_3"/>
-  <securedModels>
-    <modelUri>/sap.hana.democontent.epm.spatial.models/calculationviews/PRODUCT_SALES</modelUri>
-  </securedModels>
-</Privilege:analyticPrivilege>
