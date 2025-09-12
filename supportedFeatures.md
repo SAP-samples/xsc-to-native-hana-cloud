@@ -41,9 +41,5 @@ The following features and changes have been applied as part of the project conf
 **Unsupported Features Folder:**  
   A folder named `unsupported_feature` has been created by the extension to contain file extensions that are not supported in SAP HANA Cloud.
 
-
 **Synonym grantor service:** 
   Synonym grantor service will be added in mta descriptor if present in source project
-
-**SAP HANA CDS Access Policy entity:**
-Not supported in CAP CDS hence it is removed.
