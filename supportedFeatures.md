@@ -6,7 +6,7 @@ The following features and changes have been applied as part of the project conf
 
     - Generate SAP HANA Native project structure
     - Migrate database artifacts to SAP HANA Native formats i.e hdbdd-> hdbtables, hdbviews, hdbindexes and hdbtabletypes
-    - Converte design time artifacts to HDI-compatible formats
+    - Convert design time artifacts to HDI-compatible formats
     - Generate MTA deployment descriptor
 
 **Data Type Conversion in Native artifacts:**  
@@ -26,14 +26,14 @@ The following features and changes have been applied as part of the project conf
 **Series entity** is not supported in SAP HANA Cloud and will be converted to a regular entity. Please refer the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data).
 
 **Indexes:**  
-  Based on the technical configuration in SAP HANA hdbdd, if indexes are enabled for a hdbtable, then respective index files are created under the `hdbindex` folder.
+  Based on the technical configuration in SAP HANA hdbdd, if indexes are enabled for a hdbtable, then respective index files are created under the `hdbindexes` folder.
 
 **Fuzzy Search Indexes:**  
-  If fuzzy search is enabled on a table or column, corresponding fuzzy search index files are generated under the `hdbindex` folder.
+  If fuzzy search is enabled on a table or column, corresponding fuzzy search index files are generated under the `hdbindexes` folder.
   - **Implicit Fuzzy Search Indexes:**  
     Indexes that are automatically created by the system (such as primary key indexes) are considered implicit indexes and are handled by the database without explicit index files. In HANA 2.0, certain SQL types (like SHORTTEXT and TEXT) always had an implicit fulltext index, but in HANA Cloud, these require explicit fuzzy search index creation during migration.created fuzzy search/text indexes for SHORTTEXT and TEXT datatype elements.
   - **Explicit Fuzzy Search Indexes:**  
-    Indexes that are specifically defined in the technical configuration are created as explicit index files under the `hdbindex` folder.
+    Indexes that are specifically defined in the technical configuration are created as explicit index files under the `hdbindexes` folder.
 
 **Full Text Index Removal:**  
   Full text indexes, which are no longer supported in SAP HANA Cloud, are removed during the migration process. For cases involving Text Analysis or Text Mining, please refer to the post-migration steps.
