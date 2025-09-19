@@ -29,8 +29,6 @@ In this enhanced version, the assistant performs:
 
 **Automated Conversion of Database Artifacts:** Source XS Classic Repository database objects (such as .hdbdd, .hdbtable, .hdbview, etc.) are transformed into their corresponding SAP HANA Native compliant database artifacts, with naming adapted to SAP HANA Cloud conventions.
 
-> [!NOTE]
-> Only database artifacts are migrated. No service layer migration is done in XSC to Hana Native migration path.
 
 In this sample, conversion of Source XS Classic Repository database artifacts to the corresponding target SAP HANA Native compliance database artifacts are listed.
 
