@@ -29,8 +29,6 @@ In this enhanced version, the assistant performs:
 
 **Automated Conversion of Database Artifacts:** Source XS Classic Repository database objects (such as .hdbdd, .hdbtable, .hdbview, etc.) are transformed into their corresponding SAP HANA Native compliant database artifacts, with naming adapted to SAP HANA Cloud conventions.
 
-> [!CAUTION]
-> As automated conversion is not guaranteed to be 100% accurate, human intervention is required post-migration to validate, refine, and productionize the application logic and service definitions.
 
 In this sample, conversion of Source XS Classic Repository database artifacts to the corresponding target SAP HANA Native compliance database artifacts are listed.
 
@@ -54,7 +52,6 @@ SAP HANA Interactive Education or SHINE is a demo application that is packaged a
   - Analytical Privilege
 
 HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to migrate this Delivery Unit from XS Classic to SAP HANA Native with SAP HANA Cloud as the database using the SAP HANA Application Migration Assistant.
-The SAP HANA Application Migration Assistant performs only database artifact migration. It does not perform any service layer migration and does not use AI to perform any part of the migration process. All transformations are rule-based and deterministic.
 
 <p align="center">
 <img src="images\SAPHAMASD.png">
@@ -83,7 +80,9 @@ To successfully migrate the HCO_DEMOCONTENT sample delivery unit using the SAP H
 
 
 > [!NOTE]  
-> This sample covers only the migration of the database artifacts from SAP Neo Database to SAP Hana Cloud.  
+> This sample covers only the migration of the database artifacts from SAP Neo Database and on-prem XS classic databases to SAP Hana Cloud.
+> For the XSC to Hana Native path, Migration Assistant performs only database artifact migration, tt does not perform any service layer migration.
+>  It does not use AI to perform any part of the migration process. All transformations are rule-based and deterministic.
 > The migration steps should be tested in a development environment before production.
 > This guide is directed at single-tenant-applications.
 
@@ -162,7 +161,7 @@ And the following additional properties:
 
 2. Open SAP Business Application studio subscription.
 
-3. Select "Create Dev Space". Assign a desired name to your Dev Space and select the "SAP HANA Native Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration, as well as the `SAP Hana Tools` Extension which will be required later for deployment. Finally, click on "Create Dev Space".
+3. Select "Create Dev Space". Assign a desired name to your Dev Space and select the "SAP HANA Native Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration. The `SAP Hana Tools` Extension will be selected by default and is required for deployment. Finally, click on "Create Dev Space".
    
 4. Wait for the status of your newly created Dev Space to change to "Running". Once it's running, you can open it by clicking on the name of the Dev space that you just created.
    
@@ -244,9 +243,8 @@ In the SAP HANA Application Migration Assistant, the UI provides a drop down wit
 
 please refer to [xsCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
 
-11. Select the Migration Type (Default: non-staged) and click on Finish
-If your application depends on objects from external schemas or HDI containers, a non-staged migration generates single hdbsynonym, hdbsynonymconfig, and hdbgrants files to provide access. Staged migration, on the other hand, creates separate files for each external object, allowing you to isolate access as needed.
-
+11. Select the Migration Type (Default: non-staged) and click on Finish If your application depends on objects from external schemas or HDI containers, a non-staged migration generates single hdbsynonym, hdbsynonymconfig, and hdbgrants files to provide access. Staged migration, on the other hand, creates separate hdbsynonyms, hdbsynonymconfig and hdbgrants for each external HDI container and external schema, allowing you to isolate access as needed. For further information, please refer to the [SAP HANA Staged Migration Documentation](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html).
+ 
 <p align="center">
 <img width="545" alt="end" src="images\stagedMigration.png">
 </p>
@@ -447,9 +445,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 
 ## Unsupported Features
    
-1. Following Artifacts are not currently supported '.hdbreptask'.
-
-2. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NULL```, the migration will fail with errors. Please check the output logs for the error messages.
+If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NULL```, the migration will fail with errors. Please check the output logs for the error messages.
 
 ## Learning Resources
 
