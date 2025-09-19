@@ -243,8 +243,7 @@ In the SAP HANA Application Migration Assistant, the UI provides a drop down wit
 
 please refer to [xsCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
 
-11. Select the Migration Type (Default: non-staged) and click on Finish
-If your application depends on objects from external schemas or HDI containers, a non-staged migration generates single hdbsynonym, hdbsynonymconfig, and hdbgrants files to provide access. Staged migration, on the other hand, creates separate files for each external object, allowing you to isolate access as needed. For further information, please refer to the [SAP HANA Staged Migration Documentation](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html).
+11. Select the Migration Type (Default: non-staged) and click on Finish If your application depends on objects from external schemas or HDI containers, a non-staged migration generates single hdbsynonym, hdbsynonymconfig, and hdbgrants files to provide access. Staged migration, on the other hand, creates separate hdbsynonyms, hdbsynonymconfig and hdbgrants for each external HDI container and external schema, allowing you to isolate access as needed. For further information, please refer to the [SAP HANA Staged Migration Documentation](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html).
  
 <p align="center">
 <img width="545" alt="end" src="images\stagedMigration.png">
