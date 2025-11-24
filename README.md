@@ -261,6 +261,33 @@ At the end of the migration, a SAP HANA Native project will be generated, contai
 ## Step-5: Database post migration changes
 
 Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration Assistant. We have provided the changed files for [HCO_DEMOCONTENT](https://github.com/SAP-samples/xsc-hana-native-migration/tree/main/hana-shine-native-final) for reference.
+
+### Automated Post-Migration Changes
+
+For HCO_DEMOCONTENT migrated from LT_NEO to HANA Native, most post-migration changes can now be automated using the provided script:
+
+**Script**: `hco-HN-post-migration-changes.js`
+
+Download this file and paste it onto the root of the target folder.
+
+**Usage**:
+```bash
+node postMigChanges-HanaNative.js
+```
+
+After running the script, only two manual steps remain:
+
+1. **Update Role Files**: Replace `< Schema Name >` with your actual bound schema name in the following three role files:
+   - `db/src/roles/Admin.hdbrole`
+   - `db/src/roles/Admin.hdbroleconfig`
+   - `db/src/roles/User.hdbrole`
+
+2. **Grant Schema Access**: Execute the SQL commands in Step 7 of the deployment section to grant the necessary permissions to `< Schema Name >`.
+
+### Manual Post-Migration Changes (Alternative Approach)
+
+Alternatively, if you prefer to make changes manually, the following adjustments are required as they are not currently automated by the SAP HANA Application Migration Assistant:
+
  1. If your project contains any files from a different schema, these need to be migrated before migrating the current Delivery Unit and included in this project. If this can't be done immediately, you can remove them for the time being. To utilize objects from other containers, please refer to the SAP HANA Cloud help documentation and configure accordingly.
     
     For the HCO_DEMOCONTENT project, make the following changes:
