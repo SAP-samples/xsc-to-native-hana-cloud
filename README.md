@@ -266,7 +266,7 @@ Once the project is created, there are some adjustments we need to make manually
 
 For HCO_DEMOCONTENT migrated from LT_NEO to HANA Native, most post-migration changes can now be automated using the provided script:
 
-**Script**: [`postMigChanges-HanaNative.js`](postMigChanges-HanaNative.js)
+**Script**: Download [`postMigChanges-HanaNative.js`](postMigChanges-HanaNative.js) and paste it onto the root of the target folder.
 
 Download this file and paste it onto the root of the target folder.
 
