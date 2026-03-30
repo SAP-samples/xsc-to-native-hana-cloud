@@ -49,7 +49,7 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 2. **Open Extensions View**
    - Click on the Extensions icon in the Activity Bar (left sidebar)
    - Or press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
-  
+
     Install from Visual Studio Code Market Place
    - [SAP HANA Application Migration](https://marketplace.visualstudio.com/items?itemName=SAPSE.xs-migration-bas-extn)
 
@@ -85,7 +85,7 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 
 #### 2.1 Select Migration Path
 
-1. When the Migration extension Wizard opens, select the migration path. Since we are migrating from XS Classic to SAP HANA Native, select `XSC to Hana Native` as your migration path.	
+1. When the Migration extension Wizard opens, select the migration path. Since we are migrating from XS Classic to SAP HANA Native, select `XSC to Hana Native` as your migration path.  
 
       <p align="center">
       <img src="images\homescreen1.png" width="600">
@@ -127,17 +127,17 @@ Before starting the migration process in Visual Studio Code, ensure you have the
       </p>
 
 2. **Enter Source Identifier**
-   
+
    - **Select Source Delivery Unit**: Select DU name (e.g., `HCO_DEMOCONTENT`)
-   
+
       <p align="center">
       <img src="images/DeliveryUnitVSC.png" width="600">
       </p>
-   
-   - **For Package**: Enter package name with include subpackages flag
-     - Format: `package.name:true` or `package.name:false`
-     - Example: `sap.hana.democontent.epm.data:true`
-   
+
+   - **For Package**: Enter package name or include false flag to exclude subpackages
+     - Format: `package.name` to include or `package.name:false` to exclude specific sub-package
+     - Example: `sap.hana.db,sap.hana.data, sap.hana.data.pkg3:false`
+
       <p align="center">
       <img src="images/packagevsc.png" width="600">
       </p>
@@ -290,11 +290,7 @@ Follow [README.md - Step 6: Deployment](README.md#step-7-deployment-of-the-migra
 - Ensure all prerequisites are met
 - Review migration report for specific issues
 
-**GenAI service layer conversion not available**
-- Verify AI services are configured in BTP
-- Check your BTP account entitlements
-- Contact SAP support for AI service access
-
 ---
 
 For additional support, see [README.md - How to Obtain Support](README.md#how-to-obtain-support).
+ 
