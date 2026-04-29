@@ -199,18 +199,23 @@ function updateDefaultAccessRole() {
   
   // Remove the specific role from names array
   const roleToRemove = 'sap.hana.democontent.epm::migration_all_analytic_priv';
-  if (roleData.role && roleData.role.names) {
-    const originalLength = roleData.role.names.length;
-    roleData.role.names = roleData.role.names.filter(name => name !== roleToRemove);
-    
-    if (roleData.role.names.length < originalLength) {
-      logInfo(`Removed role: ${roleToRemove}`);
-      writeJsonFile(rolePath, roleData);
+  if (roleData.role && roleData.role.schema_roles && roleData.role.schema_roles.length > 0) {
+    const schemaRole = roleData.role.schema_roles[0];
+    if (schemaRole.names) {
+      const originalLength = schemaRole.names.length;
+      schemaRole.names = schemaRole.names.filter(name => name !== roleToRemove);
+
+      if (schemaRole.names.length < originalLength) {
+        logInfo(`Removed role: ${roleToRemove}`);
+        writeJsonFile(rolePath, roleData);
+      } else {
+        logWarning(`Role not found: ${roleToRemove}`);
+      }
     } else {
-      logWarning(`Role not found: ${roleToRemove}`);
+      logWarning('No names array found in schema_roles');
     }
   } else {
-    logWarning('No role.names array found in file');
+    logWarning('No role.schema_roles array found in file');
   }
 }
 
