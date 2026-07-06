@@ -219,100 +219,23 @@ function updateDefaultAccessRole() {
   }
 }
 
-// 5. Update PURCHASE_COMMON_CURRENCY.hdbcalculationview
-function updateCalculationView() {
-  logSection('Step 5: Updating PURCHASE_COMMON_CURRENCY.hdbcalculationview');
-  
-  const viewPath = path.join(DB_DIR, 'src', 'models', 'PURCHASE_COMMON_CURRENCY.hdbcalculationview');
-  
-  try {
-    if (!fs.existsSync(viewPath)) {
-      logWarning(`File not found: ${path.relative(ROOT_DIR, viewPath)}`);
-      return;
-    }
-    
-    let content = fs.readFileSync(viewPath, 'utf8');
-    
-    // Update currencyConversionTables attributes
-    const oldPattern = /<currencyConversionTables[^>]*>/;
-    const newContent = '<currencyConversionTables rates="sap.hana.democontent.epm.data::Conversions.TCURR" configuration="sap.hana.democontent.epm.data::Conversions.TCURV" prefactors="sap.hana.democontent.epm.data::Conversions.TCURF" notations="sap.hana.democontent.epm.data::Conversions.TCURN" precisions="sap.hana.democontent.epm.data::Conversions.TCURX"/>';
-    
-    if (oldPattern.test(content)) {
-      content = content.replace(oldPattern, newContent);
-      fs.writeFileSync(viewPath, content, 'utf8');
-      logSuccess(`Updated: ${path.relative(ROOT_DIR, viewPath)}`);
-    } else {
-      logWarning('currencyConversionTables tag not found in file');
-    }
-  } catch (error) {
-    logError(`Failed to update calculation view: ${error.message}`);
-  }
-}
-
-// 6. Update User.hdbrole
-function updateUserRole() {
-  logSection('Step 6: Updating db/src/roles/User.hdbrole');
-  
-  const rolePath = path.join(DB_DIR, 'src', 'roles', 'User.hdbrole');
-  
-  const roleData = readJsonFile(rolePath);
-  if (!roleData) {
-    logWarning(`File not found: ${path.relative(ROOT_DIR, rolePath)}`);
-    return;
-  }
-  
-  // Remove specific schema privileges
-  const referencesToRemove = ['_SYS_BIC', '_SYS_REPO', '_SYS_RT'];
-  
-  if (roleData.role && roleData.role.schema_privileges) {
-    const originalLength = roleData.role.schema_privileges.length;
-    roleData.role.schema_privileges = roleData.role.schema_privileges.filter(
-      privilege => !referencesToRemove.includes(privilege.reference)
-    );
-    
-    if (roleData.role.schema_privileges.length < originalLength) {
-      logInfo(`Removed ${originalLength - roleData.role.schema_privileges.length} schema privilege(s)`);
-      writeJsonFile(rolePath, roleData);
-    } else {
-      logWarning('No matching schema privileges found to remove');
-    }
-  } else {
-    logWarning('No schema_privileges found in file');
-  }
-}
-
-// 7. Update Admin.hdbrole
+// 5. Update Admin.hdbrole
 function updateAdminRole() {
-  logSection('Step 7: Updating db/src/roles/Admin.hdbrole');
-  
+  logSection('Step 5: Updating db/src/roles/Admin.hdbrole');
+
   const rolePath = path.join(DB_DIR, 'src', 'roles', 'Admin.hdbrole');
-  
+
   const roleData = readJsonFile(rolePath);
   if (!roleData) {
     logWarning(`File not found: ${path.relative(ROOT_DIR, rolePath)}`);
     return;
   }
-  
-  let modified = false;
-  
-  // Remove REPOSITORY_REST procedure privilege
-  if (roleData.role && roleData.role.object_privileges) {
-    const originalLength = roleData.role.object_privileges.length;
-    roleData.role.object_privileges = roleData.role.object_privileges.filter(
-      privilege => privilege.name !== 'REPOSITORY_REST'
-    );
-    
-    if (roleData.role.object_privileges.length < originalLength) {
-      logInfo('Removed REPOSITORY_REST procedure privilege');
-      modified = true;
-    }
-  }
-  
+
   // Initialize role structure if needed
   if (!roleData.role) {
     roleData.role = {};
   }
-  
+
   // Add schema privileges (with placeholder for schema name)
   roleData.role.schema_privileges = [
     {
@@ -330,8 +253,7 @@ function updateAdminRole() {
     }
   ];
   logInfo('Added schema_privileges with placeholder schema name');
-  modified = true;
-  
+
   // Add schema analytic privileges
   roleData.role.schema_analytic_privileges = [
     {
@@ -359,17 +281,14 @@ function updateAdminRole() {
     }
   ];
   logInfo('Added schema_analytic_privileges with placeholder schema name');
-  modified = true;
-  
-  if (modified) {
-    writeJsonFile(rolePath, roleData);
-    logWarning('IMPORTANT: Replace "< Schema Name >" with your actual schema name in Admin.hdbrole');
-  }
+
+  writeJsonFile(rolePath, roleData);
+  logWarning('IMPORTANT: Replace "< Schema Name >" with your actual schema name in Admin.hdbrole');
 }
 
-// 8. Create Admin.hdbroleconfig
+// 6. Create Admin.hdbroleconfig
 function createAdminRoleConfig() {
-  logSection('Step 8: Creating db/src/roles/Admin.hdbroleconfig');
+  logSection('Step 6: Creating db/src/roles/Admin.hdbroleconfig');
   
   const configPath = path.join(DB_DIR, 'src', 'roles', 'Admin.hdbroleconfig');
   
@@ -385,9 +304,9 @@ function createAdminRoleConfig() {
   logWarning('IMPORTANT: Replace "< Schema Name >" with your actual schema name in Admin.hdbroleconfig');
 }
 
-// 9. Update all .hdbtabledata files
+// 7. Update all .hdbtabledata files
 function updateHdbTableDataFiles() {
-  logSection('Step 9: Updating .hdbtabledata files in db/src/data/loads');
+  logSection('Step 7: Updating .hdbtabledata files in db/src/data/loads');
   
   const loadsDir = path.join(DB_DIR, 'src', 'data', 'loads');
   
@@ -447,8 +366,6 @@ function main() {
     cleanupDbSrc();
     updateSynonymFile();
     updateDefaultAccessRole();
-    updateCalculationView();
-    updateUserRole();
     updateAdminRole();
     createAdminRoleConfig();
     updateHdbTableDataFiles();
@@ -459,9 +376,11 @@ function main() {
     log('1. Replace all instances of "< Schema Name >" with your actual schema name in:', colors.yellow);
     log('   - db/src/roles/Admin.hdbrole', colors.yellow);
     log('   - db/src/roles/Admin.hdbroleconfig', colors.yellow);
-    log('\n2. Review the changes made to ensure they match your project requirements', colors.yellow);
-    log('\n3. If your project has project-specific configurations, adjust accordingly', colors.yellow);
-    log('\n4. Test your deployment after these changes\n', colors.yellow);
+    log('   - db/src/roles/User.hdbrole', colors.yellow);
+    log('\n2. Replace "TRUNCATE" statements with "DELETE FROM" in SQL procedures (.hdbprocedure files)', colors.yellow);
+    log('\n3. Grant schema access by executing the SQL commands in Step 7 of the deployment section', colors.yellow);
+    log('\n4. Review the changes made to ensure they match your project requirements', colors.yellow);
+    log('\n5. Test your deployment after these changes\n', colors.yellow);
     
     logSuccess('Post-migration cleanup completed successfully!');
     
@@ -482,8 +401,6 @@ module.exports = {
   cleanupDbSrc,
   updateSynonymFile,
   updateDefaultAccessRole,
-  updateCalculationView,
-  updateUserRole,
   updateAdminRole,
   createAdminRoleConfig,
   updateHdbTableDataFiles
