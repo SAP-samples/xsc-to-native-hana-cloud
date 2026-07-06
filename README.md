@@ -320,54 +320,9 @@ Alternatively, if you prefer to make changes manually, the following adjustments
     }
     ```
  3. In addition, please take the time to clear out unused role names from the `default_access_role.hdbrole` file located in the db/src/defaults folder. If there are specific roles required for your project, ensure to add them as needed.
-    For the HCO_DEMOCONTENT project, Remove `sap.hana.democontent.epm::migration_all_analytic_priv` role under names. 
-    
- 4. The Extension will modify the name of the artifacts in your project. Therefore, ensure to update the references to these artifacts accordingly.
-    - For the HCO_DEMOCONTENT project, you'll need to adjust the references for entities under the `currencyConversionTables` tag. This is located in the `db/src/models/PURCHASE_COMMON_CURRENCY.hdbcalculationview` file. Make the changes as follows:
-
-      ```
-      <currencyConversionTables rates="sap.hana.democontent.epm.data::Conversions.TCURR" configuration="sap.hana.democontent.epm.data::Conversions.TCURV" prefactors="sap.hana.democontent.epm.data::Conversions.TCURF" notations="sap.hana.democontent.epm.data::Conversions.TCURN" precisions="sap.hana.democontent.epm.data::Conversions.TCURX"/>
-      ```
-
- 5.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
+    For the HCO_DEMOCONTENT project, Remove `sap.hana.democontent.epm::migration_all_analytic_priv` role under names.
+ 4.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
      For the HCO_DEMOCONTENT project, make the following alterations:
-     - In `db/src/roles/User.hdbrole`, eliminate the following unused configurations:
-       ```
-       {
-         "reference": "_SYS_BIC",
-         "privileges": [
-            "EXECUTE",
-            "SELECT"
-         ]
-       },
-       {
-         "reference": "_SYS_REPO",
-         "privileges": [
-            "EXECUTE",
-            "SELECT"
-         ]
-       },
-       {
-         "reference": "_SYS_RT",
-         "privileges": [
-            "SELECT"
-         ]
-       }
-       ```
-       **Reason**: During the deployment step, access permissions will be granted by executing certain SQL commands.
-       
-     - In `db/src/roles/Admin.hdbrole`, eliminate the following unused configurations:
-       ```
-       {
-         "name": "REPOSITORY_REST",
-         "type": "PROCEDURE",
-         "privileges": 
-         [
-            "EXECUTE"
-         ]
-       }
-       ```
-       **Reason**: Roles are not needed for executing procedures in the same HDI container.
      - Alter `db/src/roles/Admin.hdbrole` by replacing the existing schema privileges and adding schema analytic privileges:
        ```
        "schema_privileges": [
@@ -412,7 +367,7 @@ Alternatively, if you prefer to make changes manually, the following adjustments
        ],
        ```
        **Reason**: The modifications in the hdbrole file are needed to access calculation views with analytic privileges.
- 6. Assign the permission to users with the admin role for accessing the schema.
+ 5. Assign the permission to users with the admin role for accessing the schema.
     For the HCO_DEMOCONTENT project, create an `Admin.hdbroleconfig` file in the `db/src/roles/` directory. The file should contain the following configuration:
     ```
     {
@@ -423,10 +378,10 @@ Alternatively, if you prefer to make changes manually, the following adjustments
       }
     }
     ```
- 7. In each of the .hdbtabledata files under db/src/data/loads remove the namespace `sap.hana.democontent.epm.data.loads::` from the csv file names `file_name`. For example change `sap.hana.democontent.epm.data.loads::constants.csv` to `constants.csv`.
- 8. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
- 9. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
- 10.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
+ 6. In each of the .hdbtabledata files under db/src/data/loads remove the namespace `sap.hana.democontent.epm.data.loads::` from the csv file names `file_name`. For example change `sap.hana.democontent.epm.data.loads::constants.csv` to `constants.csv`.
+ 7. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
+ 8. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
+ 9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
 
 ## Step-6: Deployment of the Migrated database artifacts
 
