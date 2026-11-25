@@ -260,7 +260,7 @@ At the end of the migration, a SAP HANA Native project will be generated, contai
 
 ## Step-5: Database post migration changes
 
-Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration Extension. We have provided the changed files for [HCO_DEMOCONTENT](https://github.com/SAP-samples/xsc-hana-native-migration/tree/main/hana-shine-native-final) for reference.
+Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration Extension.
 
 ### Automated Post-Migration Changes
 
