@@ -1,8 +1,0 @@
-{
-    "sap.hana.democontent.epm.models::SALES_ORDER_RANKING": {
-        "target": {
-            "schema": "SAP_HANA_DEMO",
-            "object": "sap.hana.democontent.epm.models::SALES_ORDER_RANKING"
-        }
-    }
-}
