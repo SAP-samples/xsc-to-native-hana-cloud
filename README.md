@@ -378,10 +378,9 @@ Alternatively, if you prefer to make changes manually, the following adjustments
       }
     }
     ```
- 6. In each of the .hdbtabledata files under db/src/data/loads remove the namespace `sap.hana.democontent.epm.data.loads::` from the csv file names `file_name`. For example change `sap.hana.democontent.epm.data.loads::constants.csv` to `constants.csv`.
- 7. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
- 8. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
- 9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
+ 6. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
+ 7. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
+ 8.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
 
 ## Step-6: Deployment of the Migrated database artifacts
 

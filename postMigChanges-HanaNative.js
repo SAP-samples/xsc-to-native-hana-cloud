@@ -104,29 +104,6 @@ function writeJsonFile(filePath, data, prettyPrint = true) {
   }
 }
 
-// Helper to find all files recursively
-function findFilesRecursive(dir, extension) {
-  let results = [];
-  try {
-    if (!fs.existsSync(dir)) {
-      return results;
-    }
-    const items = fs.readdirSync(dir);
-    for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
-      if (stat.isDirectory()) {
-        results = results.concat(findFilesRecursive(fullPath, extension));
-      } else if (fullPath.endsWith(extension)) {
-        results.push(fullPath);
-      }
-    }
-  } catch (error) {
-    logError(`Error scanning directory ${dir}: ${error.message}`);
-  }
-  return results;
-}
-
 // 1. Delete folders and files from db/cfg
 function cleanupDbCfg() {
   logSection('Step 1: Cleaning up db/cfg directory');
@@ -304,45 +281,6 @@ function createAdminRoleConfig() {
   logWarning('IMPORTANT: Replace "< Schema Name >" with your actual schema name in Admin.hdbroleconfig');
 }
 
-// 7. Update all .hdbtabledata files
-function updateHdbTableDataFiles() {
-  logSection('Step 7: Updating .hdbtabledata files in db/src/data/loads');
-  
-  const loadsDir = path.join(DB_DIR, 'src', 'data', 'loads');
-  
-  if (!fs.existsSync(loadsDir)) {
-    logWarning(`Directory not found: ${path.relative(ROOT_DIR, loadsDir)}`);
-    return;
-  }
-  
-  const tableDataFiles = findFilesRecursive(loadsDir, '.hdbtabledata');
-  
-  if (tableDataFiles.length === 0) {
-    logWarning('No .hdbtabledata files found');
-    return;
-  }
-  
-  logInfo(`Found ${tableDataFiles.length} .hdbtabledata file(s)`);
-  
-  const namespacePattern = /sap\.hana\.democontent\.epm\.data\.loads::/g;
-  
-  for (const filePath of tableDataFiles) {
-    try {
-      let content = fs.readFileSync(filePath, 'utf8');
-      
-      if (namespacePattern.test(content)) {
-        content = content.replace(namespacePattern, '');
-        fs.writeFileSync(filePath, content, 'utf8');
-        logSuccess(`Updated: ${path.relative(ROOT_DIR, filePath)}`);
-      } else {
-        logInfo(`No namespace found in: ${path.relative(ROOT_DIR, filePath)}`);
-      }
-    } catch (error) {
-      logError(`Failed to update ${path.relative(ROOT_DIR, filePath)}: ${error.message}`);
-    }
-  }
-}
-
 // Main execution
 function main() {
   console.clear();
@@ -368,7 +306,6 @@ function main() {
     updateDefaultAccessRole();
     updateAdminRole();
     createAdminRoleConfig();
-    updateHdbTableDataFiles();
     
     // Final summary
     logSection('Cleanup Complete!');
@@ -402,6 +339,5 @@ module.exports = {
   updateSynonymFile,
   updateDefaultAccessRole,
   updateAdminRole,
-  createAdminRoleConfig,
-  updateHdbTableDataFiles
+  createAdminRoleConfig
 };
